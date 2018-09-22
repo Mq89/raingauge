@@ -30,22 +30,32 @@ GPIO.setup(PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 
 def cb(channel):
+    LOG.debug("callback from channel {0}".format(channel))
     try:
         connection = MySQLdb.connect(DB_SERVER, DB_USER, "", DB_DATABASE)
         cursor = connection.cursor()
         query = "INSERT INTO {0} (sensor_id) VALUES ({1})".format(DB_TABLE, DB_SENSOR_ID)
         cursor.execute(query)
         connection.commit()
-        connection.close()
     except MySQLdb.OperationalError as e:
         LOG.error("MySQL Connection Error: {0}".format(e))
+    finally:
+        connection.close()
 
 
 GPIO.add_event_detect(PIN, GPIO.RISING, callback=cb, bouncetime=200)
 
 LOG.info("registered callback")
 
+def sigkill(signum, frame):
+    LOG.info("received SIGTERM")
+
+signal.signal(signal.SIGTERM, sigkill)
+
 # wait for any signal before ending the program
-signal.pause()
+try:
+    signal.pause()
+except KeyboardInterrupt:
+    LOG.info("catched keyboard interrupt")
 
 LOG.info("terminated")
