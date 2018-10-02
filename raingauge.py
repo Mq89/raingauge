@@ -11,7 +11,10 @@ import MySQLdb
 logging.config.fileConfig("logging.conf")
 LOG = logging.getLogger()
 
-LOG.info("started")
+
+LOG.info("###### NEW INSTANCE #####")
+LOG.log(51, "Current level is: {0}".format(logging.getLevelName(LOG.getEffectiveLevel())))
+
 # the gpio pin, the rain gauge is connected to
 # see column BCM of 'gpio readall'
 PIN = 15
@@ -26,7 +29,6 @@ DB_SENSOR_ID = "1"
 LOG.info("setting up GPIO")
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-
 
 
 def cb(channel):
