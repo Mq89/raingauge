@@ -45,7 +45,7 @@ def cb(channel):
         connection.close()
 
 
-GPIO.add_event_detect(PIN, GPIO.RISING, callback=cb, bouncetime=200)
+GPIO.add_event_detect(PIN, GPIO.RISING, callback=cb, bouncetime=500)
 
 LOG.info("registered callback")
 
