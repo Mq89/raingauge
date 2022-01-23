@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Add systemd unit to automatically start and stop the service.
+
 ## [1.0.0] - 2022-01-23
 
 First productive version.
