@@ -49,8 +49,10 @@ GPIO.add_event_detect(PIN, GPIO.RISING, callback=cb, bouncetime=500)
 
 LOG.info("registered callback")
 
+
 def sigkill(signum, frame):
     LOG.info("received SIGTERM")
+
 
 signal.signal(signal.SIGTERM, sigkill)
 
