@@ -11,4 +11,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 First productive version.
 
 [Unreleased]: https://github.com/Mq89/raingauge/compare/v1.0.0...master
-[1.0.0]: https://github.com/Mq89/raingauge/tags/v1.0.0
+[1.0.0]: https://github.com/Mq89/raingauge/releases/tag/v1.0.0
