@@ -4,8 +4,8 @@ After=network.target
 
 [Service]
 Type=simple
-WorkingDirectory=/home/pi/git/raingauge
-ExecStart=/home/pi/git/raingauge.py
+WorkingDirectory=/home/pi/raingauge
+ExecStart=/home/pi/raingauge.py
 User=pi
 
 [Install]
