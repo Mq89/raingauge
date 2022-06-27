@@ -1,0 +1,12 @@
+[Unit]
+Description=Raingauge
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/pi/raingauge
+ExecStart=/home/pi/raingauge/raingauge.py
+User=pi
+
+[Install]
+WantedBy=multi-user.target
