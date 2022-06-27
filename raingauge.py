@@ -20,7 +20,7 @@ LOG.log(51, "Current level is: {0}".format(logging.getLevelName(LOG.getEffective
 PIN = 15
 
 DB_USER = "therck"
-DB_SERVER = "cerban.local"
+DB_SERVER = "192.168.0.3"
 DB_DATABASE = "raingauge"
 DB_TABLE = "data"
 DB_SENSOR_ID = "1"
