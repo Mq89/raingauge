@@ -17,7 +17,8 @@ LOG.log(51, "Current level is: {0}".format(logging.getLevelName(LOG.getEffective
 
 # the gpio pin, the rain gauge is connected to
 # see column BCM of 'gpio readall'
-PIN = 15
+PIN = 3
+# PIN = 15
 
 DB_USER = "therck"
 DB_SERVER = "192.168.0.3"
